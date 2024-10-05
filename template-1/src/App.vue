@@ -5,7 +5,7 @@
         <BeakerIcon class="size-6 text-blue-500" />
         <h1 class="text-white text-xl font-bold">Your Logo</h1>
       </div>
-      
+
       <ul class="flex space-x-4 text-white">
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/about">About</router-link></li>
@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-import { BeakerIcon } from '@heroicons/vue/24/solid'
+  import { BeakerIcon } from '@heroicons/vue/24/solid';
 </script>
 
 <style scoped>
