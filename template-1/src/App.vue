@@ -1,14 +1,21 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div class="text-center">
-    <h1 class="text-4xl font-bold text-blue-500">Hello Tailwind!</h1>
-    <p class="mt-4 text-lg text-gray-700">This is a test for Tailwind CSS.</p>
-  </div>
+  <nav class="bg-gray-800 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-white text-xl font-bold">My Portfolio</h1>
+      <ul class="flex space-x-4">
+        <li><router-link to="/">Home</router-link></li>
+        <li><router-link to="/about">About</router-link></li>
+        <li><router-link to="/projects">Projects</router-link></li>
+        <li><router-link to="/contact">Contact</router-link></li>
+      </ul>
+    </div>
+  </nav>
 </template>
 
-<style scoped>
+<script setup>
+  // No need for any script code here for now
+</script>
 
+<style scoped>
+  /* Add any custom styles here */
 </style>
