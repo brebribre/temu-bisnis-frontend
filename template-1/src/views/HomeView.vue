@@ -1,15 +1,15 @@
-<template>
-  <div class="home">
-    <h1>Welcome to Home</h1>
-    <p>{{ message }}</p>
-  </div>
-</template>
-
 <script setup>
   import { ref } from 'vue';
+  import Hero from '../components/Hero.vue';
 
   const message = ref('Hello, World!');
 </script>
+
+<template>
+  <div class="home">
+    <Hero />
+  </div>
+</template>
 
 <style scoped>
   .home {
