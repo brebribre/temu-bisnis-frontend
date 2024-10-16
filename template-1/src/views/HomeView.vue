@@ -1,8 +1,5 @@
 <script setup>
-  import { ref } from 'vue';
   import Hero from '../components/Hero.vue';
-
-  const message = ref('Hello, World!');
 </script>
 
 <template>

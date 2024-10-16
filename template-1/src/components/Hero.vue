@@ -8,7 +8,6 @@
   
       <!-- Content -->
       <div class="hero relative z-10 flex items-center justify-center px-4 sm:px-6 lg:px-8">
- 
       </div>
     </div>
   </template>
@@ -22,5 +21,6 @@
   .hero {
     min-height: 100vh;
   }
+
   </style>
   
