@@ -21,7 +21,7 @@ const toggleMobileMenu = () => {
       <img src="../assets/logo-dark.png" class="h-10" alt="company-logo" />
       <div class="hidden md:flex space-x-4 font-sans text-xl gap-8 text-white">
         <router-link to="/">Home</router-link>
-        <router-link to="/">About Us</router-link>
+        <router-link to="/browse">Browse</router-link>
       </div>
       <button class="md:hidden text-white" @click="toggleMobileMenu">
         <MenuIcon />

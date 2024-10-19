@@ -1,6 +1,7 @@
 // src/router.js
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from './views/HomeView.vue';
+import BrowseView from "./views/BrowseView.vue";
 
 const routes = [
   {
@@ -8,6 +9,11 @@ const routes = [
     name: 'Home',
     component: HomeView,
   },
+    {
+        path: '/browse', // This will make the route `/browse` as a child of `/`
+        name: 'Browse',
+        component: BrowseView,
+    },
 ];
 
 const router = createRouter({
