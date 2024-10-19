@@ -3,6 +3,5 @@
 </template>
 
 <script setup lang="ts">
-
-import BusinessList from "../components/BusinessList.vue";
+import BusinessList from '../components/BusinessList.vue';
 </script>

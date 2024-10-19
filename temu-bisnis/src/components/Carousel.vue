@@ -1,63 +1,14 @@
 <template>
   <div class="py-16 overflow-hidden">
     <div
-      class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
+      class="w-full gap-16 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
     >
       <ul
+          v-for="(index) in 2" :key="index"
         class="flex items-center gap-16 justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
       >
-        <li>
-          <img src="../assets/logo.png" alt="Facebook" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Disney" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Airbnb" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Apple" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Spark" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Samsung" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Quora" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Sass" />
-        </li>
-      </ul>
-      <ul
-        class="flex items-center justify-center gap-16 md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
-        aria-hidden="true"
-      >
-        <li>
-          <img src="../assets/logo.png" alt="Facebook" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Disney" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Airbnb" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Apple" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Spark" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Samsung" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Quora" />
-        </li>
-        <li>
-          <img src="../assets/logo.png" alt="Sass" />
+        <li v-for="image in logos">
+          <img :src="image.url" :alt="image.name" />
         </li>
       </ul>
     </div>
@@ -65,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import logoLight from '../assets/logo.png';
 
 interface Logo {
@@ -83,7 +34,6 @@ const logos = ref<Logo[]>([
   { id: 6, name: 'Company F', url: logoLight },
 ]);
 
-const duplicatedLogos = computed(() => [...logos.value, ...logos.value]);
 </script>
 
 <style scoped>
