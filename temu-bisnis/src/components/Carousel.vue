@@ -1,24 +1,65 @@
 <template>
-  <div class="bg-gray-100 py-16 overflow-hidden">
-    <div class="container mx-auto px-4">
-      <div class="relative">
-        <div
-          class="flex animate-scroll gap-32 pb-8"
-          :style="{ width: `${logos.length * 200}px` }"
-        >
-          <div
-            v-for="logo in duplicatedLogos"
-            :key="logo.id"
-            class="flex-shrink-0 w-48 h-24 mx-4"
-          >
-            <img
-              :src="logo.url"
-              :alt="logo.name"
-              class="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-            />
-          </div>
-        </div>
-      </div>
+  <div class="py-16 overflow-hidden">
+    <div
+      class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
+    >
+      <ul
+        class="flex items-center gap-16 justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+      >
+        <li>
+          <img src="../assets/logo.png" alt="Facebook" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Disney" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Airbnb" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Apple" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Spark" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Samsung" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Quora" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Sass" />
+        </li>
+      </ul>
+      <ul
+        class="flex items-center justify-center gap-16 md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
+        aria-hidden="true"
+      >
+        <li>
+          <img src="../assets/logo.png" alt="Facebook" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Disney" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Airbnb" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Apple" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Spark" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Samsung" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Quora" />
+        </li>
+        <li>
+          <img src="../assets/logo.png" alt="Sass" />
+        </li>
+      </ul>
     </div>
   </div>
 </template>
@@ -55,7 +96,7 @@ const duplicatedLogos = computed(() => [...logos.value, ...logos.value]);
   }
 }
 
-.animate-scroll {
-  animation: scroll 30s linear infinite;
+img {
+  @apply h-20;
 }
 </style>

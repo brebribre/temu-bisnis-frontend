@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 * {
-  @apply tracking-wide font-sans;
+  @apply font-roboto;
 }

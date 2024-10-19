@@ -38,37 +38,16 @@ const toggleMobileMenu = () => {
       leave-active-class="transition ease-in duration-150"
       leave-from-class="opacity-100 scale-100"
       leave-to-class="opacity-0 scale-95"
-
     >
       <div
         v-if="isMobileMenuOpen"
         class="md:hidden mt-4 rounded-lg shadow-lg overflow-hidden bg-[#082464]"
       >
-        <a
-          href="#"
-          class="links"
-          >Home</a
-        >
-        <a
-          href="#"
-          class="links"
-          >About</a
-        >
-        <a
-          href="#"
-          class="links"
-          >Services</a
-        >
-        <a
-          href="#"
-          class="links"
-          >News</a
-        >
-        <a
-          href="#"
-          class="links"
-          >Contact</a
-        >
+        <a href="#" class="links">Home</a>
+        <a href="#" class="links">About</a>
+        <a href="#" class="links">Services</a>
+        <a href="#" class="links">News</a>
+        <a href="#" class="links">Contact</a>
       </div>
     </transition>
   </nav>
@@ -76,6 +55,6 @@ const toggleMobileMenu = () => {
 
 <style scoped>
 .links {
-  @apply block py-4 px-4 hover:bg-gray-100 transition duration-150 text-white font-semibold
+  @apply block py-4 px-4 hover:bg-gray-100 transition duration-150 text-white font-semibold;
 }
 </style>
