@@ -1,67 +1,6 @@
 <template>
   <div>
-    <!-- Navigation Bar -->
-    <nav class="bg-[#082464] text-black p-4">
-      <div class="container mx-auto flex justify-between items-center">
-        <img src="./assets/logo-dark.png" class="h-10" />
-        <div class="hidden md:flex space-x-4 font-sans text-xl gap-8">
-          <a href="#" class="hover:text-gray-300">Home</a>
-          <a href="#" class="hover:text-gray-300">About</a>
-          <a href="#" class="hover:text-gray-300">Services</a>
-          <a href="#" class="hover:text-gray-300">News</a>
-          <a href="#" class="hover:text-gray-300">Contact</a>
-        </div>
-        <button
-          class="bg-blue-200 text-[#082464] px-4 py-2 rounded hover:bg-gray-200"
-        >
-          Get Started
-        </button>
-        <button class="md:hidden text-white" @click="toggleMobileMenu">
-          <MenuIcon />
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <transition
-        enter-active-class="transition ease-out duration-200"
-        enter-from-class="opacity-0 scale-95"
-        enter-to-class="opacity-100 scale-100"
-        leave-active-class="transition ease-in duration-150"
-        leave-from-class="opacity-100 scale-100"
-        leave-to-class="opacity-0 scale-95"
-      >
-        <div
-          v-if="isMobileMenuOpen"
-          class="md:hidden mt-4 bg-white rounded-lg shadow-lg overflow-hidden"
-        >
-          <a
-            href="#"
-            class="block py-2 px-4 hover:bg-gray-100 transition duration-150"
-            >Home</a
-          >
-          <a
-            href="#"
-            class="block py-2 px-4 hover:bg-gray-100 transition duration-150"
-            >About</a
-          >
-          <a
-            href="#"
-            class="block py-2 px-4 hover:bg-gray-100 transition duration-150"
-            >Services</a
-          >
-          <a
-            href="#"
-            class="block py-2 px-4 hover:bg-gray-100 transition duration-150"
-            >News</a
-          >
-          <a
-            href="#"
-            class="block py-2 px-4 hover:bg-gray-100 transition duration-150"
-            >Contact</a
-          >
-        </div>
-      </transition>
-    </nav>
-
+    <Navbar />
     <!-- Hero Section with Contact Form -->
     <section
       class="relative bg-[url('./assets/shake-2.jpg')] bg-cover text-white py-40"
@@ -228,7 +167,6 @@
 <script setup lang="ts">
 import { ref, reactive } from 'vue';
 import {
-  MenuIcon,
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon,
@@ -238,6 +176,7 @@ import {
   ShieldIcon,
 } from 'lucide-vue-next';
 import Carousel from './components/Carousel.vue';
+import Navbar from './components/Navbar.vue';
 
 interface FormData {
   name: string;
@@ -329,8 +268,4 @@ const submitForm = () => {
 </script>
 
 <style scoped>
-/* Add any additional component-specific styles here */
-.transition {
-  transition-property: opacity, transform;
-}
 </style>
