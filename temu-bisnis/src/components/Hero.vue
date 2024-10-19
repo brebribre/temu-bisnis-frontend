@@ -28,7 +28,6 @@ const form = reactive<FormData>({
   >
     <!-- Dark overlay -->
     <div class="absolute inset-0 bg-black opacity-40"></div>
-
     <!-- Content -->
     <div
       class="container relative z-10 mx-auto flex flex-col md:flex-row items-center"
@@ -43,7 +42,10 @@ const form = reactive<FormData>({
         </p>
       </div>
       <div class="md:w-1/2">
-        <form @submit.prevent="submitForm" class="bg-white p-6 rounded-lg">
+        <form
+          @submit.prevent="submitForm"
+          class="bg-white p-6 rounded-lg text-black"
+        >
           <h2 class="text-[#082464] text-2xl font-bold mb-4">
             List your business with us
           </h2>
@@ -85,5 +87,4 @@ const form = reactive<FormData>({
     </div>
   </section>
 </template>
-
 <style scoped></style>
