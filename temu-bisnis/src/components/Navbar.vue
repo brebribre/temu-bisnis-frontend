@@ -20,11 +20,8 @@ const toggleMobileMenu = () => {
     <div class="container mx-auto flex justify-between items-center">
       <img src="../assets/logo-dark.png" class="h-10" alt="company-logo" />
       <div class="hidden md:flex space-x-4 font-sans text-xl gap-8 text-white">
-        <a href="#" class="hover:text-gray-300">Home</a>
-        <a href="#" class="hover:text-gray-300">About</a>
-        <a href="#" class="hover:text-gray-300">Services</a>
-        <a href="#" class="hover:text-gray-300">News</a>
-        <a href="#" class="hover:text-gray-300">Contact</a>
+        <router-link to="/">Home</router-link>
+        <router-link to="/">About Us</router-link>
       </div>
       <button class="md:hidden text-white" @click="toggleMobileMenu">
         <MenuIcon />
