@@ -16,7 +16,7 @@ const toggleMobileMenu = () => {
 
 <template>
   <!-- Navigation Bar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-[#082464] text-black p-4">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-[#082464] text-black px-16 py-4">
     <div class="container mx-auto flex justify-between items-center">
       <img src="../assets/logo-dark.png" class="h-10" alt="company-logo" />
       <div class="hidden md:flex space-x-4 font-sans text-xl gap-8 text-white">

@@ -13,7 +13,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="browserContainer">
+  <div class="browserContainer px-12">
     <div class="header">
       <h1 class="title">Browse Businesses</h1>
     </div>

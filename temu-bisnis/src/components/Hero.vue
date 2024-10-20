@@ -41,7 +41,7 @@ const form = reactive<FormData>({
           investments.
         </p>
       </div>
-      <div class="px-12 md:w-1/2 w-full">
+      <div class="px-12 md:w-1/2 w-full hidden md:block">
         <form
           @submit.prevent="submitForm"
           class="bg-white p-6 rounded-lg text-black"
