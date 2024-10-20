@@ -4,7 +4,8 @@
       class="w-full gap-16 inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]"
     >
       <ul
-          v-for="(index) in 2" :key="index"
+        v-for="index in 2"
+        :key="index"
         class="flex items-center gap-16 justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
       >
         <li v-for="image in logos">
@@ -33,7 +34,6 @@ const logos = ref<Logo[]>([
   { id: 5, name: 'Company E', url: logoLight },
   { id: 6, name: 'Company F', url: logoLight },
 ]);
-
 </script>
 
 <style scoped>
