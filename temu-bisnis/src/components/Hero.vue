@@ -32,16 +32,16 @@ const form = reactive<FormData>({
     <div
       class="container relative z-10 mx-auto flex flex-col md:flex-row items-center"
     >
-      <div class="md:w-1/2 mb-10 md:mb-0 mr-20">
-        <h1 class="text-7xl font-bold mb-4">
+      <div class="md:w-1/2 mb-10 md:mb-0 mr-20 mx-12">
+        <h1 class="text-5xl font-bold mb-4 md:text-7xl">
           Connecting Businesses and Investors
         </h1>
-        <p class="mb-6 text-2xl">
+        <p class="mb-6 text-xl md:text-2xl">
           Temu Bisnis is your gateway to successful business partnerships and
           investments.
         </p>
       </div>
-      <div class="md:w-1/2">
+      <div class="px-12 md:w-1/2 w-full">
         <form
           @submit.prevent="submitForm"
           class="bg-white p-6 rounded-lg text-black"

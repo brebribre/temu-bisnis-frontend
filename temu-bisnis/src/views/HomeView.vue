@@ -4,8 +4,8 @@
     <Carousel />
     <!-- Key Points Section -->
     <section class="py-20">
-      <div class="container mx-auto">
-        <h2 class="text-5xl text-center px-40 text-[#082464] mb-20">
+      <div class="container mx-auto px-12">
+        <h2 class="text-4xl text-center md:px-24 md:text-5xl text-[#082464] mb-20">
           Meet Temu Bisnis - The connective point between entrepreneurs and
           investors.
         </h2>
@@ -27,7 +27,7 @@
     </section>
     <!-- News Section -->
     <section class="bg-gray-100 py-20">
-      <div class="container mx-auto">
+      <div class="container mx-auto px-12">
         <h2 class="text-5xl font-bold mb-10 text-[#082464]">Success Stories</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div
