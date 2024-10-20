@@ -14,7 +14,6 @@ onMounted(async () => {
 
 <template>
   <div class="browserContainer">
-    {{businesses}}
     <div class="header">
       <h1 class="title">Browse Businesses</h1>
     </div>
