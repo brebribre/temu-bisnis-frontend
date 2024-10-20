@@ -42,3 +42,12 @@ To start the development server, run:
 npm run dev
 # or
 yarn dev
+ ```
+
+### FAQ
+
+To add a new api call to the project, follow these steps:
+
+1. Create a new file in the `temu-bisnis/api` directory.
+2. Add the new API call to the `temu-bisnis/api/[new_api_call_name].ts` file.
+3. every new API file should only has one endpoint

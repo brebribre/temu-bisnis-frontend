@@ -2,7 +2,7 @@ import { ref } from 'vue';
 import { useFetch } from './useFetch';
 import { Business } from './interfaces.ts';
 
-const ENDPOINT = '/api/businesses';
+const ENDPOINT = 'api/businesses';
 
 export const useBusinesses = () => {
   const { fetchData } = useFetch();
