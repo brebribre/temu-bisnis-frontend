@@ -40,11 +40,8 @@ const toggleMobileMenu = () => {
         v-if="isMobileMenuOpen"
         class="md:hidden mt-4 rounded-lg shadow-lg overflow-hidden bg-[#082464]"
       >
-        <a href="#" class="links">Home</a>
-        <a href="#" class="links">About</a>
-        <a href="#" class="links">Services</a>
-        <a href="#" class="links">News</a>
-        <a href="#" class="links">Contact</a>
+        <router-link to="/" class="links" @click="isMobileMenuOpen = false">Home</router-link>
+        <router-link to="/browse" class="links" @click="isMobileMenuOpen = false">Browse</router-link>
       </div>
     </transition>
   </nav>
@@ -52,6 +49,6 @@ const toggleMobileMenu = () => {
 
 <style scoped>
 .links {
-  @apply block py-4 px-4 hover:bg-gray-100 transition duration-150 text-white font-semibold;
+  @apply block py-4 px-4 transition duration-150 text-white font-semibold hover:opacity-80;
 }
 </style>
