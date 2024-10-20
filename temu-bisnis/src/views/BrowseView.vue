@@ -25,15 +25,15 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.browserContainer{
+.browserContainer {
   @apply bg-gray-100 py-16 min-h-screen flex flex-col;
 }
 
-.header{
-  @apply container mx-auto px-4
+.header {
+  @apply container mx-auto px-4;
 }
 
-.title{
-  @apply text-4xl font-bold mb-10 text-[#082464]
+.title {
+  @apply text-4xl font-bold mb-10 text-[#082464];
 }
 </style>

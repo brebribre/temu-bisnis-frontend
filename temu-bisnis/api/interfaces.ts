@@ -4,4 +4,5 @@ export interface Business {
   description?: string;
   location: string;
   sector: string;
+  image_url: string;
 }

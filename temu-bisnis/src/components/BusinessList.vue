@@ -36,17 +36,17 @@
     >
       No businesses found.
     </div>
-
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div v-for="business in filteredBusinesses" :key="business._id">
         <div
           class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
         >
           <img
-            src="https://placehold.co/600x400/000000/FFF"
+            :src="business.image_url"
             :alt="business.name"
-            class="w-full h-48 object-cover"
+            class="w-full h-64 object-cover"
           />
+
           <div class="p-6">
             <h2 class="text-xl font-bold text-[#082464] mb-2">
               {{ business.name }}
