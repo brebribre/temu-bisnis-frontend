@@ -48,7 +48,7 @@
           />
 
           <div class="p-6">
-            <h2 class="text-xl font-bold text-[#082464] mb-2">
+            <h2 class="text-xl font-bold text-[#082464] mb-2 truncate">
               {{ business.name }}
             </h2>
             <p class="text-gray-600 mb-2">

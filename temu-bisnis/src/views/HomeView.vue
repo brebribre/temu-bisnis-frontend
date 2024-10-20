@@ -5,7 +5,9 @@
     <!-- Key Points Section -->
     <section class="py-20">
       <div class="container mx-auto px-12">
-        <h2 class="text-4xl text-center md:px-24 md:text-5xl text-[#082464] mb-20">
+        <h2
+          class="text-4xl text-center md:px-24 md:text-5xl text-[#082464] mb-20"
+        >
           Meet Temu Bisnis - The connective point between entrepreneurs and
           investors.
         </h2>
