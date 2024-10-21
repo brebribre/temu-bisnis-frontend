@@ -42,7 +42,7 @@
     <div v-else class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <div v-for="business in filteredBusinesses" :key="business._id">
         <div
-          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
+          class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300"
         >
           <img
             v-if="business.image_url"
@@ -68,6 +68,16 @@
               <BriefcaseIcon class="inline-block w-4 h-4 mr-1" />
               {{ business.sector }}
             </p>
+            <div class="flex gap-2 justify-between mt-4" v-if="editable">
+              <Button
+                variant="danger"
+                size="small"
+                class="flex-1"
+                @click="emit('deleteBusiness', business._id)"
+              >
+                Delete
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -79,10 +89,14 @@
 import { ref, computed } from 'vue';
 import { MapPinIcon, BriefcaseIcon, SearchIcon } from 'lucide-vue-next';
 import { Business } from '../../api/interfaces.ts';
+import Button from '../reusables/Button.vue';
 
 const props = defineProps<{
   businesses: Business[];
+  editable?: boolean;
 }>();
+
+const emit = defineEmits(['deleteBusiness']);
 
 const searchQuery = ref('');
 const selectedIndustry = ref('');

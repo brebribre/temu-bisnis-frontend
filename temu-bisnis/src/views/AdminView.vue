@@ -4,7 +4,8 @@ import BusinessList from '../components/BusinessList.vue';
 import { Business } from '../../api/interfaces.ts';
 import { useBusinesses } from '../../api/useBusinesses.ts';
 
-const { fetchBusinesses, businesses, postBusiness } = useBusinesses();
+const { fetchBusinesses, businesses, postBusiness, deleteBusiness } =
+  useBusinesses();
 const loading = ref(true);
 
 const newBusiness = reactive<Omit<Business, '_id'>>({
@@ -20,6 +21,12 @@ const addBusiness = async () => {
   loading.value = false;
 
   resetForm();
+};
+
+const removeBusiness = async (id: string) => {
+  loading.value = true;
+  await deleteBusiness(id);
+  loading.value = false;
 };
 
 const resetForm = () => {
@@ -119,7 +126,11 @@ onMounted(async () => {
         <div class="w-full lg:w-2/3">
           <div v-if="loading" class="text-center">Loading...</div>
           <div v-else>
-            <BusinessList :businesses="businesses" />
+            <BusinessList
+              :businesses="businesses"
+              editable
+              @delete-business="removeBusiness"
+            />
           </div>
         </div>
       </div>

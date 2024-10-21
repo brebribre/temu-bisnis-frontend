@@ -21,5 +21,15 @@ export const useFetch = () => {
     }
   };
 
-  return { fetchData, postData };
+  const deleteData = async (endpoint: string, data: any) => {
+    try {
+      const response = await axiosInstance.delete(endpoint, { data });
+      return response.data;
+    } catch (error) {
+      console.error('Error deleting data:', error);
+      throw error;
+    }
+  };
+
+  return { fetchData, postData, deleteData };
 };
