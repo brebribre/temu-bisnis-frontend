@@ -5,7 +5,7 @@ import { Business } from './interfaces.ts';
 const ENDPOINT = '/api/businesses';
 
 export const useBusinesses = () => {
-  const { fetchData } = useFetch();
+  const { fetchData, postData, deleteData } = useFetch();
   const businesses = ref<Business[]>([]);
 
   const fetchBusinesses = async () => {
@@ -20,5 +20,23 @@ export const useBusinesses = () => {
     }
   };
 
-  return { fetchBusinesses, businesses };
+  const postBusiness = async (data: Business) => {
+    try {
+      await postData(ENDPOINT, data);
+      await fetchBusinesses();
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }
+  };
+
+  const deleteBusiness = async (id: string) => {
+    try {
+      await deleteData(ENDPOINT, id);
+      await fetchBusinesses();
+    } catch (error) {
+      console.error('Error deleting data:', error);
+    }
+  };
+
+  return { businesses, fetchBusinesses, postBusiness, deleteBusiness };
 };

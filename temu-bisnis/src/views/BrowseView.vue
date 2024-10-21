@@ -13,7 +13,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="browserContainer px-12">
+  <div class="browserContainer">
     <div class="header">
       <h1 class="title">Browse Businesses</h1>
     </div>
@@ -30,7 +30,7 @@ onMounted(async () => {
 }
 
 .header {
-  @apply container mx-auto px-4;
+  @apply container mx-auto;
 }
 
 .title {
