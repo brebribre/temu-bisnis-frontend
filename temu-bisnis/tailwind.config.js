@@ -6,6 +6,7 @@ export default {
     extend: {
       fontFamily: {
         roboto: ['Roboto', 'sans-serif'], // Add your custom font here
+        montserrat: ['Montserrat', 'sans-serif'], // Add your custom font here
       },
       animation: {
         'infinite-scroll': 'infinite-scroll 70s linear infinite',
