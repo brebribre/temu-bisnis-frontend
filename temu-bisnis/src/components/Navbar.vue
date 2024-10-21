@@ -17,7 +17,7 @@ const toggleMobileMenu = () => {
 <template>
   <!-- Navigation Bar -->
   <nav
-    class="fixed top-0 left-0 w-full z-50 bg-[#082464] text-black px-16 py-4"
+    class="fixed top-0 left-0 w-full z-50 bg-[#082464] text-black px-4 md:px-16 py-4"
   >
     <div class="container mx-auto flex justify-between items-center">
       <img src="../assets/logo-dark.png" class="h-10" alt="company-logo" />
@@ -41,7 +41,7 @@ const toggleMobileMenu = () => {
     >
       <div
         v-if="isMobileMenuOpen"
-        class="md:hidden mt-4 rounded-lg shadow-lg overflow-hidden bg-[#082464]"
+        class="md:hidden mt-4 overflow-hidden bg-[#082464]"
       >
         <router-link to="/" class="links" @click="isMobileMenuOpen = false"
           >Home</router-link
@@ -51,6 +51,9 @@ const toggleMobileMenu = () => {
           class="links"
           @click="isMobileMenuOpen = false"
           >Browse</router-link
+        >
+        <router-link to="/admin" class="links" @click="isMobileMenuOpen = false"
+          >Admin</router-link
         >
       </div>
     </transition>

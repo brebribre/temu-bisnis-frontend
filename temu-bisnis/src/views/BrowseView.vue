@@ -2,6 +2,7 @@
 import BusinessList from '../components/BusinessList.vue';
 import { useBusinesses } from '../../api/useBusinesses.ts';
 import { onMounted, ref } from 'vue';
+import Title from "../reusables/Title.vue";
 
 const { fetchBusinesses, businesses } = useBusinesses();
 const loading = ref(true);
@@ -15,7 +16,7 @@ onMounted(async () => {
 <template>
   <div class="browserContainer">
     <div class="header">
-      <h1 class="title">Browse Businesses</h1>
+      <Title>Browse Businesses</Title>
     </div>
     <div v-if="loading" class="text-center">Loading...</div>
     <div v-else>
@@ -26,7 +27,7 @@ onMounted(async () => {
 
 <style scoped>
 .browserContainer {
-  @apply bg-gray-100 py-16 min-h-screen flex flex-col;
+  @apply bg-gray-100 py-12 min-h-screen flex flex-col px-4;
 }
 
 .header {

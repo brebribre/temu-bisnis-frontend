@@ -3,6 +3,7 @@ import { ref, reactive, onMounted } from 'vue';
 import BusinessList from '../components/BusinessList.vue';
 import { Business } from '../../api/interfaces.ts';
 import { useBusinesses } from '../../api/useBusinesses.ts';
+import Title from "../reusables/Title.vue";
 
 const { fetchBusinesses, businesses, postBusiness, deleteBusiness } =
   useBusinesses();
@@ -45,9 +46,7 @@ onMounted(async () => {
 <template>
   <div class="bg-gray-100 min-h-screen py-12 px-4">
     <div class="container mx-auto">
-      <h1 class="text-4xl font-bold mb-10 text-[#082464]">
-        Business Dashboard
-      </h1>
+      <Title>Business Dashboard</Title>
 
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Left Column: Add Business Form -->
