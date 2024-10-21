@@ -23,10 +23,11 @@ export const useBusinesses = () => {
   const postBusiness = async (data: Business) => {
     try {
       await postData(ENDPOINT, data);
+      await fetchBusinesses();
     } catch (error) {
       console.error('Error posting data:', error);
     }
-  }
+  };
 
   return { fetchBusinesses, postBusiness, businesses };
 };

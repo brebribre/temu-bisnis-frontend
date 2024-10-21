@@ -15,7 +15,14 @@ const newBusiness = reactive<Omit<Business, '_id'>>({
 });
 
 const addBusiness = async () => {
+  loading.value = true;
   await postBusiness(newBusiness);
+  loading.value = false;
+
+  resetForm();
+};
+
+const resetForm = () => {
   newBusiness.name = '';
   newBusiness.location = '';
   newBusiness.sector = '';
@@ -29,7 +36,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="bg-gray-100 min-h-screen py-12">
+  <div class="bg-gray-100 min-h-screen py-12 px-4">
     <div class="container mx-auto">
       <h1 class="text-4xl font-bold mb-10 text-[#082464]">
         Business Dashboard
@@ -100,7 +107,7 @@ onMounted(async () => {
               </div>
               <button
                 type="submit"
-                class="w-full bg-[#082464] text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
+                class="w-full bg-[#082464] text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
               >
                 Add Business
               </button>
@@ -120,7 +127,4 @@ onMounted(async () => {
   </div>
 </template>
 
-
-<style scoped>
-
-</style>
+<style scoped></style>
