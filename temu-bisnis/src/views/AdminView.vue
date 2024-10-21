@@ -4,7 +4,7 @@ import BusinessList from '../components/BusinessList.vue';
 import { Business } from '../../api/interfaces.ts';
 import { useBusinesses } from '../../api/useBusinesses.ts';
 
-const { fetchBusinesses, businesses } = useBusinesses();
+const { fetchBusinesses, businesses, postBusiness } = useBusinesses();
 const loading = ref(true);
 
 const newBusiness = reactive<Omit<Business, '_id'>>({
@@ -14,12 +14,17 @@ const newBusiness = reactive<Omit<Business, '_id'>>({
   image_url: '',
 });
 
-const addBusiness = () => {};
+const addBusiness = async () => {
+  await postBusiness(newBusiness);
+  newBusiness.name = '';
+  newBusiness.location = '';
+  newBusiness.sector = '';
+  newBusiness.image_url = '';
+};
 
 onMounted(async () => {
   await fetchBusinesses();
   loading.value = false;
-  console.info(businesses.value);
 });
 </script>
 
@@ -90,7 +95,6 @@ onMounted(async () => {
                   v-model="newBusiness.image_url"
                   type="url"
                   id="image"
-                  required
                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#082464] focus:ring focus:ring-[#082464] focus:ring-opacity-50"
                 />
               </div>

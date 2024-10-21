@@ -1,8 +1,8 @@
 export interface Business {
-  _id: string;
+  _id?: string;
   name: string;
   description?: string;
   location: string;
   sector: string;
-  image_url: string;
+  image_url?: string;
 }

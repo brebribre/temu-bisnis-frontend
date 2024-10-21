@@ -42,20 +42,21 @@
           class="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
         >
           <img
+              v-if="business.image_url"
             :src="business.image_url"
             :alt="business.name"
             class="w-full h-64 object-cover"
           />
-
+          <div v-else class="w-full h-64 bg-gray-300 font-bold text-gray-400 text-center flex items-center justify-center">No image</div>
           <div class="p-6">
             <h2 class="text-xl font-bold text-[#082464] mb-2 truncate">
               {{ business.name }}
             </h2>
-            <p class="text-gray-600 mb-2">
+            <p class="text-gray-600 mb-2 truncate">
               <MapPinIcon class="inline-block w-4 h-4 mr-1" />
               {{ business.location }}
             </p>
-            <p class="text-gray-600">
+            <p class="text-gray-600 truncate">
               <BriefcaseIcon class="inline-block w-4 h-4 mr-1" />
               {{ business.sector }}
             </p>

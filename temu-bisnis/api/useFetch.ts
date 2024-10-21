@@ -11,5 +11,15 @@ export const useFetch = () => {
     }
   };
 
-  return { fetchData };
+  const postData = async (endpoint: string, data: any) => {
+    try {
+      const response = await axiosInstance.post(endpoint, data);
+      return response.data;
+    } catch (error) {
+      console.error('Error posting data:', error);
+      throw error;
+    }
+  };
+
+  return { fetchData, postData };
 };

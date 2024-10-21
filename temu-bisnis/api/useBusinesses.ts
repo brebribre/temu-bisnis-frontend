@@ -5,7 +5,7 @@ import { Business } from './interfaces.ts';
 const ENDPOINT = '/api/businesses';
 
 export const useBusinesses = () => {
-  const { fetchData } = useFetch();
+  const { fetchData, postData } = useFetch();
   const businesses = ref<Business[]>([]);
 
   const fetchBusinesses = async () => {
@@ -20,5 +20,13 @@ export const useBusinesses = () => {
     }
   };
 
-  return { fetchBusinesses, businesses };
+  const postBusiness = async (data: Business) => {
+    try {
+      await postData(ENDPOINT, data);
+    } catch (error) {
+      console.error('Error posting data:', error);
+    }
+  }
+
+  return { fetchBusinesses, postBusiness, businesses };
 };
