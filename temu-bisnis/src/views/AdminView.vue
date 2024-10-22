@@ -3,7 +3,9 @@ import { ref, reactive, onMounted } from 'vue';
 import BusinessList from '../components/BusinessList.vue';
 import { Business } from '../../api/interfaces.ts';
 import { useBusinesses } from '../../api/useBusinesses.ts';
-import Title from "../reusables/Title.vue";
+import Title from '../reusables/Title.vue';
+import Input from '../reusables/Input.vue';
+import Button from '../reusables/Button.vue';
 
 const { fetchBusinesses, businesses, postBusiness, deleteBusiness } =
   useBusinesses();
@@ -14,11 +16,24 @@ const newBusiness = reactive<Omit<Business, '_id'>>({
   location: '',
   sector: '',
   image_url: '',
+  min: 0,
+  max: 0,
+  selling_price: 0,
 });
 
 const addBusiness = async () => {
   loading.value = true;
-  await postBusiness(newBusiness);
+
+  const formattedBusiness = {
+    name: newBusiness.name,
+    location: newBusiness.location,
+    sector: newBusiness.sector,
+    image_url: newBusiness.image_url,
+    selling_price: newBusiness.selling_price,
+    revenue_range: [newBusiness.min??0, newBusiness.max??0],
+  };
+
+  await postBusiness(formattedBusiness);
   loading.value = false;
 
   resetForm();
@@ -35,6 +50,9 @@ const resetForm = () => {
   newBusiness.location = '';
   newBusiness.sector = '';
   newBusiness.image_url = '';
+  newBusiness.min = 0;
+  newBusiness.max = 0;
+  newBusiness.selling_price = 0;
 };
 
 onMounted(async () => {
@@ -47,76 +65,46 @@ onMounted(async () => {
   <div class="bg-gray-100 min-h-screen py-12 px-4">
     <div class="container mx-auto">
       <Title>Business Dashboard</Title>
-
+      {{newBusiness}}
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Left Column: Add Business Form -->
         <div class="w-full lg:w-1/3">
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-2xl font-semibold mb-4 text-[#082464]">
-              Add New Business
-            </h2>
-            <form @submit.prevent="addBusiness">
-              <div class="mb-4">
-                <label
-                  for="name"
-                  class="block text-sm font-medium text-gray-700"
-                  >Business Name</label
-                >
-                <input
-                  v-model="newBusiness.name"
-                  type="text"
-                  id="name"
-                  required
-                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#082464] focus:ring focus:ring-[#082464] focus:ring-opacity-50"
-                />
-              </div>
-              <div class="mb-4">
-                <label
-                  for="location"
-                  class="block text-sm font-medium text-gray-700"
-                  >Location</label
-                >
-                <input
-                  v-model="newBusiness.location"
-                  type="text"
-                  id="location"
-                  required
-                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#082464] focus:ring focus:ring-[#082464] focus:ring-opacity-50"
-                />
-              </div>
-              <div class="mb-4">
-                <label
-                  for="industry"
-                  class="block text-sm font-medium text-gray-700"
-                  >Industry</label
-                >
-                <input
-                  v-model="newBusiness.sector"
-                  type="text"
-                  id="industry"
-                  required
-                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#082464] focus:ring focus:ring-[#082464] focus:ring-opacity-50"
-                />
-              </div>
-              <div class="mb-4">
-                <label
-                  for="image"
-                  class="block text-sm font-medium text-gray-700"
-                  >Image URL</label
-                >
-                <input
-                  v-model="newBusiness.image_url"
-                  type="url"
-                  id="image"
-                  class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#082464] focus:ring focus:ring-[#082464] focus:ring-opacity-50"
-                />
-              </div>
-              <button
-                type="submit"
-                class="w-full bg-[#082464] text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300"
+            <h2 class="text-lg font-bold text-[#082464] mb-4">Add New Business</h2>
+            <form @submit.prevent="addBusiness" class="flex flex-col gap-2">
+              <Input v-model="newBusiness.name" label="Name" type="text" />
+              <Input
+                v-model="newBusiness.location"
+                label="Location"
+                type="text"
+              />
+              <Input
+                v-model="newBusiness.sector"
+                label="Industry"
+                type="text"
+              />
+              <Input
+                v-model="newBusiness.image_url"
+                label="Image URL"
+                type="url"
+              />
+              <Input
+                v-model="newBusiness.min"
+                label="Min Revenue (IDR / month)"
+                type="number"
+              />
+              <Input
+                v-model="newBusiness.max"
+                label="Max Revenue (IDR / month)"
+                type="number"
+              />
+              <Input
+                v-model="newBusiness.selling_price"
+                label="Selling Price (IDR)"
+                type="number"
+                >Rp</Input
               >
-                Add Business
-              </button>
+              <Button type="submit" class="mt-4 w-full">Add Business</Button>
             </form>
           </div>
         </div>

@@ -56,17 +56,21 @@
           >
             No image
           </div>
-          <div class="p-6">
+          <div class="p-6 flex flex-col gap-2">
             <h2 class="text-xl font-bold text-[#082464] mb-2 truncate">
               {{ business.name }}
             </h2>
-            <p class="text-gray-600 mb-2 truncate">
+            <p class="text-gray-600 truncate">
               <MapPinIcon class="inline-block w-4 h-4 mr-1" />
               {{ business.location }}
             </p>
-            <p class="text-gray-600 truncate">
+            <p class="text-gray-600">
               <BriefcaseIcon class="inline-block w-4 h-4 mr-1" />
               {{ business.sector }}
+            </p>
+            <p class="text-gray-600 truncate" v-if="business.revenue_range">
+              <DollarSignIcon class="inline-block w-4 h-4 mr-1" />
+              {{ business.revenue_range[0] }} - {{ business.revenue_range[1] }}
             </p>
             <div class="flex gap-2 justify-between mt-4" v-if="editable">
               <Button
@@ -87,7 +91,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { MapPinIcon, BriefcaseIcon, SearchIcon } from 'lucide-vue-next';
+import { MapPinIcon, BriefcaseIcon, SearchIcon, DollarSignIcon } from 'lucide-vue-next';
 import { Business } from '../../api/interfaces.ts';
 import Button from '../reusables/Button.vue';
 

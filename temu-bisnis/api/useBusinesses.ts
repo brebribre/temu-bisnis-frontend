@@ -31,7 +31,7 @@ export const useBusinesses = () => {
 
   const deleteBusiness = async (id: string) => {
     try {
-      await deleteData(ENDPOINT, id);
+      await deleteData(ENDPOINT + '/' + id);
       await fetchBusinesses();
     } catch (error) {
       console.error('Error deleting data:', error);

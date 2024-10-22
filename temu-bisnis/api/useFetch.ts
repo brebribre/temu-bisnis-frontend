@@ -21,9 +21,9 @@ export const useFetch = () => {
     }
   };
 
-  const deleteData = async (endpoint: string, data: any) => {
+  const deleteData = async (endpoint: string) => {
     try {
-      const response = await axiosInstance.delete(endpoint, { data });
+      const response = await axiosInstance.delete(endpoint);
       return response.data;
     } catch (error) {
       console.error('Error deleting data:', error);

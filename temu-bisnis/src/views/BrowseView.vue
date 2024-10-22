@@ -2,7 +2,7 @@
 import BusinessList from '../components/BusinessList.vue';
 import { useBusinesses } from '../../api/useBusinesses.ts';
 import { onMounted, ref } from 'vue';
-import Title from "../reusables/Title.vue";
+import Title from '../reusables/Title.vue';
 
 const { fetchBusinesses, businesses } = useBusinesses();
 const loading = ref(true);
@@ -32,9 +32,5 @@ onMounted(async () => {
 
 .header {
   @apply container mx-auto;
-}
-
-.title {
-  @apply text-4xl font-bold mb-10 text-[#082464];
 }
 </style>
