@@ -65,7 +65,7 @@ onMounted(async () => {
   <div class="bg-gray-100 min-h-screen py-12 px-4">
     <div class="container mx-auto">
       <Title>Business Dashboard</Title>
-      {{ newBusiness }}
+
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Left Column: Add Business Form -->
         <div class="w-full lg:w-1/3">
