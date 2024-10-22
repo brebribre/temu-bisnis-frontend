@@ -30,7 +30,7 @@ const addBusiness = async () => {
     sector: newBusiness.sector,
     image_url: newBusiness.image_url,
     selling_price: newBusiness.selling_price,
-    revenue_range: [newBusiness.min??0, newBusiness.max??0],
+    revenue_range: [newBusiness.min ?? 0, newBusiness.max ?? 0],
   };
 
   await postBusiness(formattedBusiness);
@@ -65,12 +65,14 @@ onMounted(async () => {
   <div class="bg-gray-100 min-h-screen py-12 px-4">
     <div class="container mx-auto">
       <Title>Business Dashboard</Title>
-      {{newBusiness}}
+      {{ newBusiness }}
       <div class="flex flex-col lg:flex-row gap-8">
         <!-- Left Column: Add Business Form -->
         <div class="w-full lg:w-1/3">
           <div class="bg-white rounded-lg shadow-md p-6">
-            <h2 class="text-lg font-bold text-[#082464] mb-4">Add New Business</h2>
+            <h2 class="text-lg font-bold text-[#082464] mb-4">
+              Add New Business
+            </h2>
             <form @submit.prevent="addBusiness" class="flex flex-col gap-2">
               <Input v-model="newBusiness.name" label="Name" type="text" />
               <Input

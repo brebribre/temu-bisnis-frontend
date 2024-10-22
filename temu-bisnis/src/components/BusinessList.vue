@@ -91,7 +91,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
-import { MapPinIcon, BriefcaseIcon, SearchIcon, DollarSignIcon } from 'lucide-vue-next';
+import {
+  MapPinIcon,
+  BriefcaseIcon,
+  SearchIcon,
+  DollarSignIcon,
+} from 'lucide-vue-next';
 import { Business } from '../../api/interfaces.ts';
 import Button from '../reusables/Button.vue';
 

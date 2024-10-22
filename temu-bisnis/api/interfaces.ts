@@ -1,4 +1,3 @@
-
 export interface Business {
   _id?: string;
   name: string;
@@ -8,6 +7,6 @@ export interface Business {
   image_url?: string;
   min?: number;
   max?: number;
-  revenue_range?: number[]
+  revenue_range?: number[];
   selling_price: number;
 }
