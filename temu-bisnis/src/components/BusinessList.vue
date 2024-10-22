@@ -70,7 +70,12 @@
             </p>
             <p class="text-gray-600 truncate" v-if="business.revenue_range">
               <DollarSignIcon class="inline-block w-4 h-4 mr-1" />
-              {{ business.revenue_range[0] }} - {{ business.revenue_range[1] }}
+              IDR {{ business.revenue_range[0] }} - IDR
+              {{ business.revenue_range[1] }}
+            </p>
+            <p class="text-gray-600 truncate" v-if="business.revenue_range">
+              <TicketIcon class="inline-block w-4 h-4 mr-1" />
+              IDR {{ business.selling_price }}
             </p>
             <div class="flex gap-2 justify-between mt-4" v-if="editable">
               <Button
@@ -96,6 +101,7 @@ import {
   BriefcaseIcon,
   SearchIcon,
   DollarSignIcon,
+  TicketIcon,
 } from 'lucide-vue-next';
 import { Business } from '../../api/interfaces.ts';
 import Button from '../reusables/Button.vue';

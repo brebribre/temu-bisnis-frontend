@@ -91,17 +91,17 @@ onMounted(async () => {
                 type="url"
               />
               <Input
-                v-model="newBusiness.min"
+                v-model.number="newBusiness.min"
                 label="Min Revenue (IDR / month)"
                 type="number"
               />
               <Input
-                v-model="newBusiness.max"
+                v-model.number="newBusiness.max"
                 label="Max Revenue (IDR / month)"
                 type="number"
               />
               <Input
-                v-model="newBusiness.selling_price"
+                v-model.number="newBusiness.selling_price"
                 label="Selling Price (IDR)"
                 type="number"
                 >Rp</Input
